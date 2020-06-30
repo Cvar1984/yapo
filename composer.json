@@ -1,0 +1,29 @@
+{
+  "name": "cvar1984/yapo",
+  "description": "Yet another php obfuscator",
+  "type": "application",
+  "minimum-stability": "stable",
+  "license": "MIT",
+  "authors": [
+    {
+      "name": "Cvar1984",
+      "email": "gedzsarjuncomuniti@gmail.com",
+      "role": "developer"
+    }
+  ],
+  "bin": [
+    "bin/yapo"
+  ],
+  "autoload": {
+    "psr-4": {
+      "Cvar1984\\":"src/"
+    }
+  },
+  "require-dev": {
+    "humbug/box": "^3.8"
+  },
+  "scripts": {
+    "make": "./vendor/bin/box compile",
+    "check": "./vendor/bin/box verify ./build/lite"
+  }
+}
