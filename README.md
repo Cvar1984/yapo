@@ -12,7 +12,11 @@ using `composer global install`
 ```sh
 yapo file.php
 ```
-### multi compress
+### multiple file compress general
+```sh
+yapo file1.php file2.php
+```
+### multiple file compress using find
 ```sh
 find ./myproject -type f -iname \*.php -exec yapo {} +
 ```
