@@ -14,5 +14,5 @@ yapo file.php
 ```
 ### multi compress
 ```sh
-yapo $(find ./myproject -type f -name "*.php")
+find ./myproject -type f -iname \*.php -exec yapo {} +
 ```
