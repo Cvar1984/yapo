@@ -24,6 +24,6 @@
   },
   "scripts": {
     "make": "./vendor/bin/box compile",
-    "check": "./vendor/bin/box verify ./build/lite"
+    "check": "./vendor/bin/box verify ./bin/yapo"
   }
 }
