@@ -28,6 +28,6 @@
   },
   "scripts": {
     "make": "./vendor/bin/box compile",
-    "check": "./vendor/bin/box verify ./build/yapo"
+    "check": "./vendor/bin/box verify ./bin/yapo"
   }
 }
