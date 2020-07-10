@@ -2,6 +2,9 @@
 
 namespace Cvar1984\Yapo;
 
+use Cvar1984\App\Exception\NotFoundException;
+use Cvar1984\App\Exception\BadPermissionException;
+
 class Yapo
 {
     const STUB_LINUX = 1;
@@ -19,15 +22,13 @@ class Yapo
      * @param string $file
      * @param callable $method
      * @param int $stub
+     * @return array
+     * @throws NotFoundException
      */
     public static function make(string $file, callable $method, int $stub = 0)
     {
-        if (!file_exists($file)) {
-            throw new \RuntimeException('Not exist');
-        }
-        if (!is_file($file)) {
-            throw new \RuntimeException('Not a file');
-        }
+        if (!file_exists($file)) throw new NotFoundException('Not exist');
+        if (!is_file($file)) throw new NotFoundException('Not a file');
 
         $content = file_get_contents($file);
         $earlySize = strlen($content);
@@ -38,7 +39,7 @@ class Yapo
                 $dohtem = 'gzinflate';
                 break;
             default:
-                throw new \RuntimeException('Method not allowed');
+                throw new NotFoundException('Method not found');
                 break;
         }
 
@@ -90,8 +91,9 @@ class Yapo
         }
 
         if (!file_put_contents($file, $content)) {
-            throw new \RuntimeException('Permission denied');
+            throw new BadPermissionException('Permission denied');
         }
+
         $laterSize = strlen($content);
         $laterSum = sha1($content);
         $percentage = (int)(($earlySize * 100) / $laterSize);

@@ -2,7 +2,8 @@
   "name": "cvar1984/yapo",
   "description": "Yet another php obfuscator",
   "type": "application",
-  "minimum-stability": "stable",
+  "minimum-stability": "dev",
+  "prefer-stable": true,
   "license": "MIT",
   "authors": [
     {
@@ -19,11 +20,14 @@
       "Cvar1984\\":"src/"
     }
   },
+  "require": {
+      "cvar1984/app": "^1.0"
+  },
   "require-dev": {
     "humbug/box": "^3.8"
   },
   "scripts": {
     "make": "./vendor/bin/box compile",
-    "check": "./vendor/bin/box verify ./build/lite"
+    "check": "./vendor/bin/box verify ./build/yapo"
   }
 }
