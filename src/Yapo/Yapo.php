@@ -27,8 +27,12 @@ class Yapo
      */
     public static function make(string $file, callable $method, int $stub = 0)
     {
-        if (!file_exists($file)) throw new NotFoundException('Not exist');
-        if (!is_file($file)) throw new NotFoundException('Not a file');
+        if (!file_exists($file)) {
+            throw new NotFoundException('Not exist');
+        }
+        if (!is_file($file)) {
+            throw new NotFoundException('Not a file');
+        }
 
         $content = file_get_contents($file);
         $earlySize = strlen($content);
@@ -61,28 +65,35 @@ class Yapo
 
             switch ($stub) {
                 case 1:
-                    $content = "#!/usr/bin/env php\n<?php " . $payload . $content;
+                    $content =
+                        "#!/usr/bin/env php\n<?php " . $payload . $content;
                     break;
                 case 2: // jpeg
-                    $content = hex2bin('FFD8FFE2') . '<?php ' . $payload . $content;
+                    $content =
+                        hex2bin('FFD8FFE2') . '<?php ' . $payload . $content;
                     break;
                 case 3: // zip
-                    $content = hex2bin('504B0304') . '<?php ' . $payload . $content;
+                    $content =
+                        hex2bin('504B0304') . '<?php ' . $payload . $content;
                     break;
                 case 4: // pdf
                     $content = '%PDF-0-1<?php ' . $payload . $content;
                     break;
                 case 5: // mp3
-                    $content = hex2bin('494433') . '<?php ' . $payload . $content;
+                    $content =
+                        hex2bin('494433') . '<?php ' . $payload . $content;
                     break;
                 case 6: // mpeg
-                    $content = hex2bin('1A45DFA3') . '<?php ' . $payload . $content;
+                    $content =
+                        hex2bin('1A45DFA3') . '<?php ' . $payload . $content;
                     break;
                 case 7: // lua
-                    $content = hex2bin('1B4C7561') . '<?php ' . $payload . $content;
+                    $content =
+                        hex2bin('1B4C7561') . '<?php ' . $payload . $content;
                     break;
                 case 8: // nes
-                    $content = hex2bin('4E45531A') . '<?php ' . $payload . $content;
+                    $content =
+                        hex2bin('4E45531A') . '<?php ' . $payload . $content;
                     break;
                 default:
                     $content = '<?php ' . $payload . $content;
@@ -96,9 +107,9 @@ class Yapo
 
         $laterSize = strlen($content);
         $laterSum = sha1($content);
-        $percentage = (int)(($earlySize * 100) / $laterSize);
-        $earlySize = (int)($earlySize / 1024);
-        $laterSize = (int)($laterSize / 1024);
+        $percentage = (int) (($earlySize * 100) / $laterSize);
+        $earlySize = (int) ($earlySize / 1024);
+        $laterSize = (int) ($laterSize / 1024);
 
         return [
             'action' => $action,
@@ -108,7 +119,7 @@ class Yapo
             'sizeof_bytes_then' => $earlySize,
             'sizeof_bytes_now' => $laterSize,
             'sumof_sha1_then' => $earlySum,
-            'sumof_sha1_now' => $laterSum
+            'sumof_sha1_now' => $laterSum,
         ];
     }
 }

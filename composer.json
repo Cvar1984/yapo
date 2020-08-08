@@ -21,7 +21,8 @@
     }
   },
   "require": {
-      "cvar1984/app": "^1.0"
+      "cvar1984/app": "^1.0",
+    "symfony/console": "4.*"
   },
   "require-dev": {
     "humbug/box": "^3.8"
