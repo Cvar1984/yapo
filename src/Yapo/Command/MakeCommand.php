@@ -92,7 +92,7 @@ class MakeCommand extends Command
                 $stub = Yapo::STUB_LINUX;
                 break;
             default:
-                $stub = Yapo::STUB_LINUX;
+                $stub = false;
         }
 
         $io = new SymfonyStyle($input, $output);
@@ -107,6 +107,9 @@ class MakeCommand extends Command
 
             $io->progressFinish();
             $output->writeln("<info>Action: {$results['action']}</info>");
+            $output->writeln(
+                "<info>size: {$results['sizeof_bytes_now']} bytes</info>"
+            );
             $output->writeln(
                 "<info>Percentage: {$results['percentage']}%</info>"
             );

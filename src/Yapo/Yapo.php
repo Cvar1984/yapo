@@ -25,7 +25,7 @@ class Yapo
      * @return array
      * @throws NotFoundException
      */
-    public static function make(string $file, callable $method, int $stub = 0)
+    public static function make(string $file, $method, int $stub = 0)
     {
         if (!file_exists($file)) {
             throw new NotFoundException('Not exist');
