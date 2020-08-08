@@ -24,3 +24,5 @@ yapo yapo:make gzdeflate lua shell1.php shell2.php
 ```sh
 find ./myproject -type f -iname \*.php -exec yapo yapo:make <..> <..> {} +
 ```
+# Demo
+[Asciinema](https://asciinema.org/a/WpXltv0fDmDRBPVfVmQlaygjh)
