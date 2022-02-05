@@ -1,28 +1,28 @@
 # Yet another PHP Obfuscator
 
-this tools able to (de)compress your php code and inject
-common file signature to fool webserver uploader
-and no installation dependency needed, only single phar executable.
+this tools able to (de)compress your php shellcode string and inject
+common file signature like jpeg to fuck webserver uploader or malware string scanner like what i made before.
+no need to install whole shit, just download the single phar executable file and fuck them all.
 you can download it from [Here](bin/yapo)
 
 ## pro tips
 Move it to `/usr/local/bin` or save it to `vendor/bin`
-using `composer global install`
+using `composer global install cvar1984/yapo`
 ### command
 ```sh
-yapo yapo:make <compression> <signature> <file>...
+yapo make <compression> <signature> <file>...
 ```
 ### single compress
 ```sh
-yapo yapo:make gzdeflate jpeg shell.php
+yapo make gzdeflate jpeg shell.php
 ```
-### multiple file compress general
+### multiple file compress without signature injection
 ```sh
-yapo yapo:make gzdeflate lua shell1.php shell2.php
+yapo make gzdeflate whatever shell1.php shell2.php
 ```
 ### multiple file compress using find
 ```sh
-find ./myproject -type f -iname \*.php -exec yapo yapo:make <..> <..> {} +
+find ./myproject -type f -name \*.php -exec yapo make gzdeflate jpeg {} +\;
 ```
-# Demo
+# Deprecated Demo
 [Asciinema](https://asciinema.org/a/WpXltv0fDmDRBPVfVmQlaygjh)
