@@ -21,7 +21,7 @@ class MakeCommand extends Command
      *
      * @var string
      */
-    protected static $defaultName = 'yapo:make';
+    protected static $defaultName = 'make';
 
     /**
      * configure

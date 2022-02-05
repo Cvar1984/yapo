@@ -53,13 +53,14 @@ class Yapo
             $content = $dohtem($content);
         } else {
             $action = 'compress';
-            $payload = '$f=fopen(__FILE__,\'r\');';
-            $payload .= 'fseek($f,__COMPILER_HALT_OFFSET__);';
-            $payload .= '$t=tmpfile();';
-            $payload .= '$u=stream_get_meta_data($t)[\'uri\'];';
-            $payload .= 'fwrite($t,' . $dohtem . '(stream_get_contents($f)));';
+            $payload = '$x = array("\x68\x65\x78\x32\x62\x69\x6e",\'666f70656e\',\'667365656b\',\'746d7066696c65\',\'73747265616d5f6765745f6d6574615f64617461\',\'667772697465\',\'73747265616d5f6765745f636f6e74656e7473\',\'66636c6f7365\',\'5f5f68616c745f636f6d70696c6572\');';
+            $payload .= '$f=$x[0]($x[1])(__FILE__,\'r\');';
+            $payload .= '$x[0]($x[2])($f,__COMPILER_HALT_OFFSET__);';
+            $payload .= '$t=$x[0]($x[3])();';
+            $payload .= '$u=$x[0]($x[4])($t)[\'uri\'];';
+            $payload .= '$x[0]($x[5])($t,' . $dohtem . '($x[0]($x[6])($f)));';
             $payload .= 'include($u);';
-            $payload .= 'fclose($t);';
+            $payload .= '$x[0]($x[7])($t);';
             $payload .= '__halt_compiler();';
             $content = $method($content);
 
