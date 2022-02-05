@@ -27,4 +27,4 @@ yapo make gzdeflate whatever shell1.php shell2.php
 find ./myproject -type f -name \*.php -exec yapo make gzdeflate jpeg {} +\;
 ```
 # Deprecated Demo
-![Asciinema](https://asciinema.org/a/WpXltv0fDmDRBPVfVmQlaygjh)
+[![asciicast](https://asciinema.org/a/WpXltv0fDmDRBPVfVmQlaygjh.svg)](https://asciinema.org/a/WpXltv0fDmDRBPVfVmQlaygjh)
