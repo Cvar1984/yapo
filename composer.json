@@ -30,5 +30,11 @@
   "scripts": {
     "make": "./vendor/bin/box compile",
     "check": "./vendor/bin/box verify ./bin/yapo"
+  },
+  "config": {
+    "allow-plugins": {
+      "bamarni/composer-bin-plugin": true,
+      "ocramius/package-versions": true
+    }
   }
 }
