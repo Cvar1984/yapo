@@ -28,3 +28,20 @@ find ./myproject -type f -name \*.php -exec yapo make gzdeflate jpeg {} +\;
 ```
 # Deprecated Demo
 [![asciicast](https://asciinema.org/a/WpXltv0fDmDRBPVfVmQlaygjh.svg)](https://asciinema.org/a/WpXltv0fDmDRBPVfVmQlaygjh)
+
+# signature
+- jpeg: FFD8FFE2
+- jpg: FFD8FFE2
+- mp4: 1A45DFA3
+- mpeg: 1A45DFA3
+- luac: 1B4C7561
+- lua: 1B4C7561
+- zip: 504B0304
+- pdf: %PDF-0-1
+- mp3: 494433
+- nes: 4E45531A
+- linux: #!/usr/bin/env php
+- shebang: #!/usr/bin/env php
+- random string: none
+
+[Full definition](src/Yapo/Yapo.php)
