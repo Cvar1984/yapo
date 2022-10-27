@@ -8,7 +8,7 @@
   "authors": [
     {
       "name": "Cvar1984",
-      "email": "gedzsarjuncomuniti@gmail.com",
+      "email": "Cvar1984@pm.me",
       "role": "developer"
     }
   ],
@@ -21,7 +21,6 @@
     }
   },
   "require": {
-      "cvar1984/app": "^1.0",
     "symfony/console": "4.*"
   },
   "require-dev": {

@@ -2,8 +2,8 @@
 
 namespace Cvar1984\Yapo;
 
-use Cvar1984\App\Exception\NotFoundException;
-use Cvar1984\App\Exception\BadPermissionException;
+use Cvar1984\Yapo\Exceptions\NotFoundException;
+use Cvar1984\Yapo\Exceptions\BadPermissionException;
 
 class Yapo
 {
@@ -53,14 +53,24 @@ class Yapo
             $content = $dohtem($content);
         } else {
             $action = 'compress';
-            $payload = '$x = array("\x68\x65\x78\x32\x62\x69\x6e",\'666f70656e\',\'667365656b\',\'746d7066696c65\',\'73747265616d5f6765745f6d6574615f64617461\',\'667772697465\',\'73747265616d5f6765745f636f6e74656e7473\',\'66636c6f7365\',\'5f5f68616c745f636f6d70696c6572\');';
-            $payload .= '$f=$x[0]($x[1])(__FILE__,\'r\');';
-            $payload .= '$x[0]($x[2])($f,__COMPILER_HALT_OFFSET__);';
-            $payload .= '$t=$x[0]($x[3])();';
-            $payload .= '$u=$x[0]($x[4])($t)[\'uri\'];';
-            $payload .= '$x[0]($x[5])($t,' . $dohtem . '($x[0]($x[6])($f)));';
+            $payload = '$s = "he" . "x2bin";';
+            $payload .= '$_ = array($s,"666f70656e","667365656b","746d7066696c65","73747265616d5f6765745f6d6574615f64617461","667772697465","73747265616d5f6765745f636f6e74656e7473","66636c6f7365","5f5f68616c745f636f6d70696c6572");';
+            $payload .='$x1 = $_[0];';
+            $payload .='$x2 = $x1($_[1]);';
+            $payload .='$x3 = $x1($_[2]);';
+            $payload .='$x4 = $x1($_[3]);';
+            $payload .='$x5 = $x1($_[4]);';
+            $payload .='$x6 = $x1($_[5]);';
+            $payload .='$x7 = $x1($_[6]);';
+            $payload .='$x8 = $x1($_[7]);';
+            $payload .='$x9 = $x1($_[8]);';
+            $payload .= '$f=$x2(__FILE__,"r");';
+            $payload .= '$x3($f,__COMPILER_HALT_OFFSET__);';
+            $payload .= '$t=$x4();';
+            $payload .= '$u=$x5($t)["uri"];';
+            $payload .= '$x6($t,' . $dohtem . '($x7($f)));';
             $payload .= 'include($u);';
-            $payload .= '$x[0]($x[7])($t);';
+            $payload .= '$x8($t);';
             $payload .= '__halt_compiler();';
             $content = $method($content);
 
@@ -124,3 +134,4 @@ class Yapo
         ];
     }
 }
+
