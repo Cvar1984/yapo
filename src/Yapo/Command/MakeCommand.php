@@ -31,13 +31,6 @@ class MakeCommand extends Command
     {
         $this->setDescription('Compress given file');
         $this->setHelp('No help');
-
-        $this->addArgument(
-            'compression',
-            InputArgument::REQUIRED,
-            'Compression method'
-        );
-
         $this->addArgument(
             'signature',
             InputArgument::REQUIRED,
@@ -59,7 +52,6 @@ class MakeCommand extends Command
     protected function execute(InputInterface $input, OutputInterface $output)
     {
         $files = $input->getArgument('file');
-        $compression = $input->getArgument('compression');
         $stub = $input->getArgument('signature');
 
         switch ($stub) {
@@ -102,7 +94,7 @@ class MakeCommand extends Command
 
             foreach ($files as $file) {
                 $io->progressAdvance();
-                $results = Yapo::make($file, $compression, $stub);
+                $results = Yapo::make($file, $stub);
             }
 
             $io->progressFinish();

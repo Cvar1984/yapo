@@ -20,12 +20,11 @@ class Yapo
      * write
      *
      * @param string $file
-     * @param callable $method
      * @param int $stub
      * @return array
      * @throws NotFoundException
      */
-    public static function make(string $file, $method, int $stub = 0)
+    public static function make(string $file, int $stub = 0)
     {
         if (!file_exists($file)) {
             throw new NotFoundException('Not exist');
@@ -38,41 +37,34 @@ class Yapo
         $earlySize = strlen($content);
         $earlySum = sha1($content);
 
-        switch ($method) {
-            case 'gzdeflate':
-                $dohtem = 'gzinflate';
-                break;
-            default:
-                throw new NotFoundException('Method not found');
-                break;
-        }
 
-        if (strpos($content, '__halt_compiler();')) {
+        if (strpos($content, '__Halt_CompiLer/* Y */ /* A */ /* P */ /* O */ /** */();')) {
             $action = 'decompress';
-            $content = explode('__halt_compiler();', $content)[1];
-            $content = $dohtem($content);
+            $content = explode('__Halt_CompiLer/* Y */ /* A */ /* P */ /* O */ /** */();', $content)[1];
+            $content = gzdeflate($content);
         } else {
             $action = 'compress';
             $payload = '$s = "he" . "x2bin";';
-            $payload .= '$_ = array($s,"666f70656e","667365656b","746d7066696c65","73747265616d5f6765745f6d6574615f64617461","667772697465","73747265616d5f6765745f636f6e74656e7473","66636c6f7365","5f5f68616c745f636f6d70696c6572");';
-            $payload .='$x1 = $_[0];';
-            $payload .='$x2 = $x1($_[1]);';
-            $payload .='$x3 = $x1($_[2]);';
-            $payload .='$x4 = $x1($_[3]);';
-            $payload .='$x5 = $x1($_[4]);';
-            $payload .='$x6 = $x1($_[5]);';
-            $payload .='$x7 = $x1($_[6]);';
-            $payload .='$x8 = $x1($_[7]);';
-            $payload .='$x9 = $x1($_[8]);';
+            $payload .= '$_ = array($s,"666f70656e","667365656b","746d7066696c65","73747265616d5f6765745f6d6574615f64617461","667772697465","73747265616d5f6765745f636f6e74656e7473","66636c6f7365","5f5f68616c745f636f6d70696c6572","677a696e666c617465");';
+            $payload .= '$x1 = $_[0];';
+            $payload .= '$x2 = $x1($_[1]);';
+            $payload .= '$x3 = $x1($_[2]);';
+            $payload .= '$x4 = $x1($_[3]);';
+            $payload .= '$x5 = $x1($_[4]);';
+            $payload .= '$x6 = $x1($_[5]);';
+            $payload .= '$x7 = $x1($_[6]);';
+            $payload .= '$x8 = $x1($_[7]);';
+	    $payload .= '$x9 = $x1($_[8]);';
+	    $payload .= '$x10 = $x1($_[9]);';
             $payload .= '$f=$x2(__FILE__,"r");';
             $payload .= '$x3($f,__COMPILER_HALT_OFFSET__);';
             $payload .= '$t=$x4();';
             $payload .= '$u=$x5($t)["uri"];';
-            $payload .= '$x6($t,' . $dohtem . '($x7($f)));';
-            $payload .= 'include($u);';
+            $payload .= '$x6($t,$x10($x7($f)));';
+            $payload .= 'IncLude($u);';
             $payload .= '$x8($t);';
-            $payload .= '__halt_compiler();';
-            $content = $method($content);
+            $payload .= '__Halt_CompiLeR/* Y */ /* A */ /* P */ /* O */ /** */();';
+            $content = gzdeflate($content);
 
             switch ($stub) {
                 case 1:
@@ -124,8 +116,6 @@ class Yapo
 
         return [
             'action' => $action,
-            'compress_method' => $method,
-            'decompress_method' => $dohtem,
             'percentage' => $percentage,
             'sizeof_bytes_then' => $earlySize,
             'sizeof_bytes_now' => $laterSize,
