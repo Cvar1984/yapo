@@ -16,15 +16,15 @@ yapo make <compression> <signature> <file>...
 ```
 ### single compress
 ```sh
-yapo make gzdeflate jpeg shell.php
+yapo make jpeg shell.php
 ```
 ### multiple file compress without signature injection
 ```sh
-yapo make gzdeflate whatever shell1.php shell2.php
+yapo make whatever shell1.php shell2.php
 ```
 ### multiple file compress using find
 ```sh
-find ./myproject -type f -name \*.php -exec yapo make gzdeflate jpeg {} +\;
+find ./myproject -type f -name \*.php -exec yapo make jpeg {} +\;
 ```
 # Deprecated Demo
 [![asciicast](https://asciinema.org/a/WpXltv0fDmDRBPVfVmQlaygjh.svg)](https://asciinema.org/a/WpXltv0fDmDRBPVfVmQlaygjh)
@@ -45,3 +45,4 @@ find ./myproject -type f -name \*.php -exec yapo make gzdeflate jpeg {} +\;
 - random string: none
 
 [Full definition](src/Yapo/Yapo.php)
+[Compression method](http://www.faqs.org/rfcs/rfc1951.html)
