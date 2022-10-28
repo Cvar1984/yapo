@@ -45,4 +45,5 @@ find ./myproject -type f -name \*.php -exec yapo make jpeg {} +\;
 - random string: none
 
 [Full definition](src/Yapo/Yapo.php)
+
 [Compression method](http://www.faqs.org/rfcs/rfc1951.html)
