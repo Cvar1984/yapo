@@ -1,4 +1,5 @@
 # Yet another PHP Obfuscator
+[![CodeFactor](https://www.codefactor.io/repository/github/cvar1984/yapo/badge)](https://www.codefactor.io/repository/github/cvar1984/yapo)
 
 this tools able to (de)compress your php shellcode string and inject
 common file signature like jpeg to fuck webserver uploader or malware string scanner like what i made before.
