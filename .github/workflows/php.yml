@@ -19,3 +19,7 @@ jobs:
 
     - name: Install dependencies
       run: composer install --prefer-dist --no-progress --no-suggest
+    - name: Making Phar data
+      run: composer make
+    - name: Checkikng signature
+      run: composer check
