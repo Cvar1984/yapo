@@ -63,7 +63,7 @@ class Yapo
             $payload .= '$x6($t,$x10($x7($f)));';
             $payload .= 'IncLude($u);';
             $payload .= '$x8($t);';
-            $payload .= '__Halt_CompiLeR/* Y */ /* A */ /* P */ /* O */ /** */();';
+            $payload .= '__Halt_CompiLer/* Y */ /* A */ /* P */ /* O */ /** */();';
             $content = gzdeflate($content);
 
             switch ($stub) {
