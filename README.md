@@ -1,4 +1,5 @@
 # Yet another PHP Obfuscator
+[![CodeFactor](https://www.codefactor.io/repository/github/cvar1984/yapo/badge)](https://www.codefactor.io/repository/github/cvar1984/yapo)
 
 this tools able to (de)compress your php shellcode string and inject
 common file signature like jpeg to fuck webserver uploader or malware string scanner like what i made before.
@@ -26,10 +27,10 @@ yapo make whatever shell1.php shell2.php
 ```sh
 find ./myproject -type f -name \*.php -exec yapo make jpeg {} +\;
 ```
-# Deprecated Demo
+## Deprecated Demo
 [![asciicast](https://asciinema.org/a/WpXltv0fDmDRBPVfVmQlaygjh.svg)](https://asciinema.org/a/WpXltv0fDmDRBPVfVmQlaygjh)
 
-# signature
+## signature
 - jpeg: FFD8FFE2
 - jpg: FFD8FFE2
 - mp4: 1A45DFA3
@@ -47,3 +48,5 @@ find ./myproject -type f -name \*.php -exec yapo make jpeg {} +\;
 [Full definition](src/Yapo/Yapo.php)
 
 [Compression method](http://www.faqs.org/rfcs/rfc1951.html)
+
+[Contributing](CONTRIBUTING.md)
