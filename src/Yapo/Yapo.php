@@ -41,7 +41,7 @@ class Yapo
         if (strpos($content, '__Halt_CompiLer/* Y */ /* A */ /* P */ /* O */ /** */();')) {
             $action = 'decompress';
             $content = explode('__Halt_CompiLer/* Y */ /* A */ /* P */ /* O */ /** */();', $content)[1];
-            $content = gzdeflate($content);
+            $content = gzinflate($content);
         } else {
             $action = 'compress';
             $payload = '$s = "he" . "x2bin";';
