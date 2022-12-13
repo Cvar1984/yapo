@@ -4,7 +4,7 @@
   "type": "application",
   "minimum-stability": "dev",
   "prefer-stable": true,
-  "license": "GPLv3",
+  "license": "GPL-3.0-only",
   "authors": [
     {
       "name": "Cvar1984",
