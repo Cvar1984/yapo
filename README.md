@@ -4,13 +4,11 @@
 this tools able to (de)compress your php shellcode string and inject
 common file signature like jpeg to fuck webserver uploader or malware string scanner like what i made before.
 no need to install whole shit, just download the single phar executable file and fuck them all.
-you can download it from [Here](bin/yapo).
+you can download it from [Here](bin/yapo) or [here](https://github.com/Cvar1984/yapo/releases/).
 
 and also your shellcode won't works if the server disable fopen, fseek, fwrite, fclose, and include.
 > DISCLAIMER use eval to obfuscate is gay
-## pro tips
-Move it to `/usr/local/bin` or save it to `vendor/bin`
-using `composer global install cvar1984/yapo`
+
 ### command
 ```sh
 yapo make <compression> <signature> <file>...
@@ -27,8 +25,8 @@ yapo make whatever shell1.php shell2.php
 ```sh
 find ./myproject -type f -name \*.php -exec yapo make jpeg {} +\;
 ```
-## Deprecated Demo
-[![asciicast](https://asciinema.org/a/WpXltv0fDmDRBPVfVmQlaygjh.svg)](https://asciinema.org/a/WpXltv0fDmDRBPVfVmQlaygjh)
+## Demo
+[![asciicast](https://asciinema.org/a/545185.svg)](https://asciinema.org/a/545185)
 
 ## signature
 - jpeg: FFD8FFE2
