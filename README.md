@@ -11,7 +11,7 @@ and also your shellcode won't works if the server disable fopen, fseek, fwrite, 
 
 ### command
 ```sh
-yapo make <compression> <signature> <file>...
+yapo make <signature> <file>...
 ```
 ### single compress
 ```sh
