@@ -1,6 +1,5 @@
 {
   "alias": "main.phar",
-  "chmod": "0755",
   "finder": [
     {
       "name": ["*"],
@@ -10,7 +9,6 @@
   ],
   "main": "main.php",
   "output": "bin/yapo",
-  "stub": true,
   "algorithm": "SHA512",
   "compression": "GZ"
 }
