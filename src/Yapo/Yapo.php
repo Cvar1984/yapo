@@ -45,8 +45,13 @@ class Yapo
             $content = gzinflate($content);
         } else {
             $action = 'compress';
-            $payload = '$s = "he" . "x2bin";';
-            $payload .= '$_ = array($s,"666f70656e","667365656b","746d7066696c65","73747265616d5f6765745f6d6574615f64617461","667772697465","73747265616d5f6765745f636f6e74656e7473","66636c6f7365","5f5f68616c745f636f6d70696c6572","677a696e666c617465");';
+            $payload = '$s="he"."x2bin";';
+            $payload .= "if(!FunCTion_ExiSts /** " . bin2hex(random_bytes(2)) . " */ (\$s) /* " . bin2hex(random_bytes(2)) . "*/){";
+            $payload .= '$s=\'h2b\';';
+            $payload .= "funCTion h2b /* ".bin2hex(random_bytes(2)) ." */ (\$h2d){";
+            $payload .= "ReTurn pack/* " . bin2hex(random_bytes(2)) . " */(\"H*\", \$h2d);";
+            $payload .= "}}";
+            $payload .= '$_ = ARraY($s,"666f7" . "0656e","6673" . "65656b","746d706" . "6696c65","73747265616d5" . "f6765745f6d6" . "574615f64617461","6677". "72697465","73747265616d" . "5f6765745f" . "636f6e74656e7473","66636" . "c6f7365","5f5f68616c74" . "5f636f6d70696c6572","677a696e6" . "66c617465");';
             $payload .= '$x1=$_[0];';
             $payload .= '$x2=$x1($_[1]);';
             $payload .= '$x3=$x1($_[2]);';
