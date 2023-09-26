@@ -2,7 +2,7 @@
     "alias": "main.phar",
     "finder": [
         {
-            "name": ["*"],
+            "notName":"/LICENSE|.*\\.md|.*\\.dist|composer\\.json|composer\\.lock/",
             "exclude": ["test", "tests", "example", "examples", "bin", "build"],
             "in": ["vendor", "src"]
         }
