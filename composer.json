@@ -21,14 +21,15 @@
     }
   },
   "require": {
-    "symfony/console": "4.*"
+    "symfony/console": "4.* | ^6.1.7"
   },
   "require-dev": {
-    "humbug/box": "^3.8"
+    "humbug/box": "^3.8 | ^4.3.8"
   },
   "scripts": {
     "make": "./vendor/bin/box compile",
-    "check": "./vendor/bin/box verify ./bin/yapo"
+    "check": "./vendor/bin/box verify ./bin/yapo",
+    "validates": "./vendor/bin/box validate"
   },
   "config": {
     "allow-plugins": {
