@@ -1,14 +1,19 @@
 {
-  "alias": "main.phar",
-  "finder": [
-    {
-      "name": ["*"],
-      "exclude": ["test","tests","example","examples"],
-      "in": ["vendor","src"]
-    }
-  ],
-  "main": "main.php",
-  "output": "bin/yapo",
-  "algorithm": "SHA512",
-  "compression": "GZ"
+    "alias": "main.phar",
+    "finder": [
+        {
+            "name": ["*"],
+            "exclude": ["test", "tests", "example", "examples", "bin", "build"],
+            "in": ["vendor", "src"]
+        }
+    ],
+    "compactors": [
+        "KevinGH\\Box\\Compactor\\Php",
+        "KevinGH\\Box\\Compactor\\PhpScoper",
+        "KevinGH\\Box\\Compactor\\Json"
+    ],
+    "main": "main.php",
+    "output": "bin/yapo",
+    "algorithm": "SHA256",
+    "compression": "GZ"
 }
