@@ -45,13 +45,7 @@ class Yapo
             $content = gzinflate($content);
         } else {
             $action = 'compress';
-            $payload = '$s="he"."x2bin";';
-            $payload .= "if(!FunCTion_ExiSts /** " . bin2hex(random_bytes(2)) . " */ (\$s) /* " . bin2hex(random_bytes(2)) . "*/){";
-            $payload .= '$s=\'h2b\';';
-            $payload .= "funCTion h2b /* ".bin2hex(random_bytes(2)) ." */ (\$h2d){";
-            $payload .= "ReTurn pack/* " . bin2hex(random_bytes(2)) . " */(\"H*\", \$h2d);";
-            $payload .= "}}";
-            $payload .= '$_ = ARraY($s,"666f7" . "0656e","6673" . "65656b","746d706" . "6696c65","73747265616d5" . "f6765745f6d6" . "574615f64617461","6677". "72697465","73747265616d" . "5f6765745f" . "636f6e74656e7473","66636" . "c6f7365","5f5f68616c74" . "5f636f6d70696c6572","677a696e6" . "66c617465");';
+            $payload = '$_ = ARraY("uhex","666f7" . "0656e","6673" . "65656b","746d706" . "6696c65","73747265616d5" . "f6765745f6d6" . "574615f64617461","6677". "72697465","73747265616d" . "5f6765745f" . "636f6e74656e7473","66636" . "c6f7365","5f5f68616c74" . "5f636f6d70696c6572","677a696e6" . "66c617465","686578646563");';
             $payload .= '$x1=$_[0];';
             $payload .= '$x2=$x1($_[1]);';
             $payload .= '$x3=$x1($_[2]);';
@@ -62,13 +56,17 @@ class Yapo
             $payload .= '$x8=$x1($_[7]);';
             $payload .= '$x9=$x1($_[8]);';
             $payload .= '$x10=$x1($_[9]);';
+            $payload .= '$x11=$x1($_[10]);';
+            //$payload = 'function hex($n){$y="";for($i=0;$i<strlen($n);$i++){$y.=dechex(ord($n[$i]));}return $y;}';
+            $payload .= 'function uhex /*'. bin2hex(random_bytes(2)) .'*/($y){$n="";for($i=0;$i<strLen/*' .bin2hex(random_bytes(3)) . '*/($y)-1;$i+=2){$n.=CHR/*' .bin2hex(random_bytes(4)) . '*/(hExDec($y[$i].$y[$i+1]));}return $n;}';
+
             $payload .= '$f=$x2(__FILE__,"r");';
             $payload .= '$x3($f,__COMPILER_HALT_OFFSET__);';
             $payload .= '$t=$x4();';
             $payload .= '$u=$x5($t);';
             $payload .= '$u=$u["uri"];';
             $payload .= '$x6($t,$x10($x7($f)));';
-            $payload .= 'IncLude($u);';
+            $payload .= 'rEquiRe($u);';
             $payload .= '$x8($t);';
             $payload .= Yapo::COMPILER_TOKEN;
             $content = gzdeflate($content);
