@@ -71,34 +71,34 @@ class Yapo
             $content = gzdeflate($content);
 
             switch ($stub) {
-                case 1:
+                case Yapo::STUB_LINUX:
                     $content =
                         "#!/usr/bin/env php\n<?php " . $payload . $content;
                     break;
-                case 2: // jpeg
+                case Yapo::STUB_JPEG:
                     $content =
                         hex2bin('FFD8FFE2') . '<?php ' . $payload . $content;
                     break;
-                case 3: // zip
+                case Yapo::STUB_ZIP:
                     $content =
                         hex2bin('504B0304') . '<?php ' . $payload . $content;
                     break;
-                case 4: // pdf
+                case Yapo::STUB_PDF:
                     $content = '%PDF-0-1<?php ' . $payload . $content;
                     break;
-                case 5: // mp3
+                case Yapo::STUB_MP3:
                     $content =
                         hex2bin('494433') . '<?php ' . $payload . $content;
                     break;
-                case 6: // mpeg
+                case Yapo::STUB_MPEG:
                     $content =
                         hex2bin('1A45DFA3') . '<?php ' . $payload . $content;
                     break;
-                case 7: // lua
+                case Yapo::STUB_LUA:
                     $content =
                         hex2bin('1B4C7561') . '<?php ' . $payload . $content;
                     break;
-                case 8: // nes
+                case Yapo::STUB_NES:
                     $content =
                         hex2bin('4E45531A') . '<?php ' . $payload . $content;
                     break;
